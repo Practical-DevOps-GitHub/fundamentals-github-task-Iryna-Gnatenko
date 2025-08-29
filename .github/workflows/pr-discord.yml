@@ -8,12 +8,3 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send PR notification to Discord
-        uses: Ilshidur/action-discord@v2
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: |
-            🚀 New Pull Request created!
-            • Title: ${{ github.event.pull_request.title }}
-            • Author: ${{ github.actor }}
-            • Link: ${{ github.event.pull_request.html_url }}
