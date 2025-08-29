@@ -8,3 +8,8 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Discord notifications
+        uses: cl8dep/action-discord@0.1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: 'New Pull Request created! ${{ github.event.pull_request.title }}'
